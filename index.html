@@ -5,154 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Book Store</title>
   <link rel="stylesheet" href="styles.css">
-
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
       margin: 0;
       padding: 0;
-      background-color: #f1f3f6;
     }
-
-    /* Header */
     header {
-      background-color: #2874f0;
+      background-color: #4CAF50;
       color: white;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
+      padding: 20px;
     }
-
     header img {
-      width: 120px;
+      width: 150px; /* Adjust width as needed */
+      margin: 10px 0;
     }
-
-    .search-container {
-      flex: 1;
-      display: flex;
-      margin: 0 20px;
-    }
-
-    .search-container input {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 4px 0 0 4px;
-    }
-
-    .search-container button {
-      padding: 10px;
-      background-color: #ff8c00;
-      border: none;
-      border-radius: 0 4px 4px 0;
-      color: white;
-      cursor: pointer;
-    }
-
     nav a {
-      margin: 0 10px;
+      margin: 0 15px;
       color: white;
       text-decoration: none;
+      font-size: 18px;
     }
-
-    /* Sidebar and Main Content */
-    .container {
+    section {
       display: flex;
+      justify-content: space-around;
+      padding: 50px;
     }
-
-    .sidebar {
-      width: 20%;
+    .column {
       background-color: white;
-      padding: 20px;
-      border-right: 1px solid #ddd;
-    }
-
-    .sidebar h3 {
-      margin-bottom: 10px;
-    }
-
-    .main-content {
-      flex: 1;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .product {
-      background-color: white;
-      padding: 15px;
-      border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      width: 20%;
       text-align: center;
     }
-
-    .product img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    .column h2 {
+      color: #333;
     }
-
+    .column p {
+      font-size: 18px;
+      color: #777;
+    }
     footer {
-      background-color: #333;
-      color: white;
       text-align: center;
       padding: 10px;
+      background-color: #333;
+      color: white;
       position: fixed;
       width: 100%;
       bottom: 0;
     }
   </style>
 </head>
-
 <body>
-
   <header>
-    <img src="logo.png" alt="Book Store Logo">
-    <div class="search-container">
-      <input type="text" placeholder="Search for books...">
-      <button>Search</button>
-    </div>
+    <h1>Welcome to My Book Store</h1>
+    <img src="Reader-page0001.jpg" alt="Book Logo"> <!-- Replace with your logo file name -->
     <nav>
-      <a href="#">Login</a> | <a href="#">Cart</a>
+      <a href="#">Home</a> | <a href="#">Books</a> | <a href="#">Contact</a>
     </nav>
   </header>
 
-  <div class="container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <h3>Filters</h3>
-      <p><strong>Category:</strong> Fiction, Non-Fiction</p>
-      <p><strong>Price Range:</strong> ₹100 - ₹1000</p>
-      <p><strong>Ratings:</strong> 4+ Stars</p>
+  <section>
+    <div class="column">
+      <h2>All Categories</h2>
+      <p>Explore our entire collection!</p>
     </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-      <div class="product">
-        <img src="book1.jpg" alt="Book 1">
-        <h2>Book Title 1</h2>
-        <p>₹499</p>
-      </div>
-
-      <div class="product">
-        <img src="book2.jpg" alt="Book 2">
-        <h2>Book Title 2</h2>
-        <p>₹399</p>
-      </div>
-
-      <div class="product">
-        <img src="book3.jpg" alt="Book 3">
-        <h2>Book Title 3</h2>
-        <p>₹599</p>
-      </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
     </div>
-  </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2024 My Book Store. All rights reserved.</p>
   </footer>
-
 </body>
 </html>

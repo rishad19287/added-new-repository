@@ -1,30 +1,47 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ecf0f1; /* Light background color */
-    margin: 0;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Background color */
+  color: #333; /* Default text color */
 }
 
-header {
-    background-color: #34495e; /* Darker header */
-    color: white;
-    padding: 10px;
-    text-align: center;
+.logo {
+  display: block;
+  margin: 0 auto; /* Center the logo */
+  max-width: 200px; /* Adjust the size of the logo */
 }
 
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
+h1 {
+  color: #2c3e50; /* Change this color to your preferred color */
+  text-align: center; /* Center align the header */
+  font-size: 2.5em; /* Increase font size */
+  font-weight: bold; /* Bold text */
 }
 
-section {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #bdc3c7; /* Border for section */
-    border-radius: 5px;
+.subtitle {
+  color: #8e44ad; /* Change this color to your preferred color */
+  text-align: center; /* Center align the subtitle */
+  font-size: 1.5em; /* Increase font size */
+  margin-bottom: 20px; /* Space below the subtitle */
+}
+
+nav {
+  text-align: center; /* Center align navigation links */
+  margin-bottom: 20px; /* Space below the navigation */
+}
+
+a {
+  color: #e74c3c; /* Change link color */
+  text-decoration: none; /* Remove underline from links */
+  margin: 0 10px; /* Space between links */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
 }
 
 footer {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center; /* Center align footer text */
+  padding: 10px; /* Add some padding */
+  background-color: #34495e; /* Footer background color */
+  color: white; /* Footer text color */
 }

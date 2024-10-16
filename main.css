@@ -1,115 +1,21 @@
-/* Resetting default margins and paddings */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Body Background */
-body {
-  background-color: #f0f8ff;
-}
-
-/* Header */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #4caf50;
-  color: white;
-}
-
-.header h1 {
-  font-size: 24px;
-}
-
-.search-bar input {
-  padding: 8px;
-  width: 300px;
-  border-radius: 5px 0 0 5px;
-  border: 1px solid #ddd;
-}
-
-.search-bar button {
-  padding: 8px;
-  border: none;
-  background-color: #ffa500;
-  color: white;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-}
-
-.search-bar button:hover {
-  background-color: #ff7043;
-}
-
-/* Main Interface */
-.main-interface {
-  display: flex;
-  margin: 20px;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 200px;
-  padding: 15px;
-  background-color: #dff9fb;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Content Section */
-.content {
-  flex: 1;
-  padding: 15px;
-}
-
-.content-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
+/* Box Colors */
 .box {
-  width: 48%;
-  padding: 30px;
-  text-align: center;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
+  background-color: #f4f4f4;
   border-radius: 10px;
-}
-
-/* Colors for the boxes */
-.sale-banner {
-  background-color: #3498db;
-}
-
-.high-today {
-  background-color: #e74c3c;
-}
-
-.coming-soon {
-  display: flex;
-  justify-content: space-between;
-}
-
-.coming-soon div {
-  width: 30%;
-  padding: 30px;
-  background-color: #f1c40f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: center;
-  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Footer */
-footer {
-  background-color: #34495e;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+/* Hover Effect for Boxes */
+.box:hover {
+  background-color: #ffeaa7;
+  transform: scale(1.05);
+}
+
+/* Header Links Hover */
+.header a:hover {
+  color: #ffa500;
+  text-decoration: underline;
 }

@@ -5,30 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Book Store</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    header img {
+      width: 150px;
+      margin: 10px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    section {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px;
+    }
+    .column {
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      width: 20%;
+      text-align: center;
+    }
+    .column h2 {
+      color: #333;
+    }
+    .column p {
+      font-size: 18px;
+      color: #777;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="search-container">
-      <input type="text" placeholder="Rich dad poor dad book in Hindi">
-      <button>Search</button>
-    </div>
+    <h1>Welcome to My Book Store</h1>
+    <img src="—Pngtree—open book flat design_4124286.png" alt="Book Logo">
+    <nav>
+      <a href="#">Home</a> | <a href="#">Books</a> | <a href="#">Contact</a>
+    </nav>
   </header>
 
-  <section class="grid-container">
-    <div class="sidebar">
-      <p>Filters ↓</p>
-      <p>Popularity ↓</p>
+  <section>
+    <div class="column">
+      <h2>All Categories</h2>
+      <p>Explore our entire collection!</p>
     </div>
-    <div class="main-content">
-      <div class="column">Sale Banner</div>
-      <div class="column">Today's High</div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
     </div>
   </section>
 
   <footer>
     <p>&copy; 2024 My Book Store. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

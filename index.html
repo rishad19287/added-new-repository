@@ -5,34 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Book Store</title>
   <link rel="stylesheet" href="styles.css">
+
   <style>
+    /* Global Styles */
     body {
       font-family: Arial, sans-serif;
-      background-color: #f3f4f6;
+      background-color: #e3f2fd; /* Light Blue Background */
       margin: 0;
       padding: 0;
     }
+
+    /* Header */
     header {
       background-color: #4CAF50;
       color: white;
       text-align: center;
       padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
+
     header img {
       width: 150px;
       margin: 10px 0;
     }
+
     nav a {
       margin: 0 15px;
       color: white;
       text-decoration: none;
       font-size: 18px;
     }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Search Bar */
+    .search-bar {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .search-bar input {
+      width: 60%;
+      padding: 10px;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+    }
+
+    .search-bar button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background-color: #ff9800;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: #e68900;
+    }
+
+    /* Section with Columns */
     section {
       display: flex;
       justify-content: space-around;
       padding: 50px;
     }
+
     .column {
       background-color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,14 +87,24 @@
       border-radius: 8px;
       width: 20%;
       text-align: center;
+      transition: transform 0.3s;
     }
+
+    .column:hover {
+      transform: scale(1.05);
+    }
+
     .column h2 {
       color: #333;
+      margin-bottom: 10px;
     }
+
     .column p {
       font-size: 18px;
       color: #777;
     }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 10px;
@@ -59,7 +116,9 @@
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>Welcome to My Book Store</h1>
     <img src="—Pngtree—open book flat design_4124286.png" alt="Book Logo">
@@ -67,6 +126,12 @@
       <a href="#">Home</a> | <a href="#">Books</a> | <a href="#">Contact</a>
     </nav>
   </header>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search for books...">
+    <button>Search</button>
+  </div>
 
   <section>
     <div class="column">
@@ -90,5 +155,6 @@
   <footer>
     <p>&copy; 2024 My Book Store. All rights reserved.</p>
   </footer>
+
 </body>
 </html>

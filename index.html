@@ -4,140 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Book Store</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: Arial, sans-serif;
       background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
     }
-
     header {
       background-color: #4CAF50;
       color: white;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
+      padding: 20px;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
+    header img {
+      width: 150px;
+      margin: 10px 0;
     }
-
-    .logo img {
-      width: 40px;
-      margin-right: 10px;
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
     }
-
-    .logo h1 {
-      font-size: 24px;
-    }
-
-    .hamburger {
-      font-size: 30px;
-      cursor: pointer;
-    }
-
     section {
       display: flex;
       justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 40px;
+      padding: 50px;
     }
-
     .column {
       background-color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
       border-radius: 8px;
-      width: 22%;
-      margin: 15px;
-      position: relative;
+      width: 20%;
       text-align: center;
     }
-
-    .column img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-
     .column h2 {
       color: #333;
-      font-size: 20px;
-      margin-bottom: 5px;
     }
-
-    .actions {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
+    .column p {
+      font-size: 18px;
+      color: #777;
     }
-
-    .actions button {
-      width: 48%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .add-cart {
-      background-color: #4CAF50;
-      color: white;
-    }
-
-    .wishlist {
-      background-color: #FF9800;
-      color: white;
-    }
-
-    .form-container {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .form-box {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 400px;
-      text-align: center;
-    }
-
-    .form-box input,
-    .form-box textarea {
-      width: 90%;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    .form-box button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
     footer {
       text-align: center;
       padding: 10px;
@@ -147,73 +57,69 @@
       width: 100%;
       bottom: 0;
     }
+    .search-container {
+      display: flex;
+      justify-content: flex-end;
+      margin: 20px;
+    }
+    .search-container input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 200px;
+    }
+    .search-container button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .search-container button:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <div class="logo">
-      <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Book Logo">
-      <h1>My Book Store</h1>
-    </div>
-    <div class="hamburger" onclick="openForm()">☰</div>
+    <h1>Welcome to My Book Store</h1>
+    <img src="—Pngtree—open book flat design_4124286.png" alt="Book Logo">
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="books.html">Books</a> |
+      <a href="sell.html">Earn with Book Store</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <!-- Book Section -->
+  <div class="search-container">
+    <input type="text" placeholder="Search for books...">
+    <button>Search</button>
+  </div>
+
   <section>
     <div class="column">
-      <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Rich Dad Poor Dad">
-      <h2>Rich Dad Poor Dad</h2>
-      <p>Price: ₹199</p>
-      <div class="actions">
-        <button class="add-cart">Add to Cart</button>
-        <button class="wishlist">Wishlist</button>
-      </div>
+      <h2>All Categories</h2>
+      <p>Explore our entire collection!</p>
     </div>
-
-    <!-- Placeholder Book -->
     <div class="column">
-      <img src="https://via.placeholder.com/150" alt="New Arrival">
       <h2>Coming Soon</h2>
-      <p>Stay tuned for new books!</p>
-      <div class="actions">
-        <button class="add-cart">Add to Cart</button>
-        <button class="wishlist">Wishlist</button>
-      </div>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
     </div>
   </section>
 
-  <!-- Form Container -->
-  <div class="form-container" id="formContainer">
-    <div class="form-box">
-      <h2>Sell with Book Store</h2>
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <input type="text" id="phone" placeholder="Your Phone Number" required>
-      <textarea id="details" rows="4" placeholder="Book Details"></textarea>
-      <button onclick="submitForm()">Submit</button>
-    </div>
-  </div>
-
-  <!-- Footer -->
   <footer>
     <p>&copy; 2024 My Book Store. All rights reserved.</p>
   </footer>
-
-  <script>
-    function openForm() {
-      document.getElementById("formContainer").style.display = "flex";
-    }
-
-    function submitForm() {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const phone = document.getElementById("phone").value;
-      const details = document.getElementById("details").value;
-
-      const whatsappLink = `https://wa.me/9005334613?text=Name:%20${name}%0AEmail:%20${email}%0APhone:%20${phone}%0ABook%20Details:%20${details}`;
-      window.open(whatsappLink, "_blank");
-    }
-  </script>
 </body>
 </html>

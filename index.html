@@ -17,44 +17,31 @@
       color: white;
       text-align: center;
       padding: 20px;
+      position: relative;
     }
     header img {
-      width: 150px;
+      width: 100px;
       margin: 10px 0;
     }
-    nav {
+    .navbar {
       position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    .hamburger {
-      font-size: 24px;
+      top: 20px;
+      right: 20px;
       cursor: pointer;
-      display: none;
     }
-    .dropdown {
+    .navbar span {
+      font-size: 30px;
+    }
+    nav {
       display: none;
       background-color: #4CAF50;
       padding: 10px;
-      position: absolute;
-      right: 10px;
-      top: 50px;
-      border-radius: 5px;
     }
-    .dropdown a {
+    nav a {
       display: block;
-      padding: 5px;
       color: white;
       text-decoration: none;
-    }
-    .dropdown a:hover {
-      background-color: #3e8e41;
+      padding: 10px 0;
     }
     section {
       display: flex;
@@ -68,13 +55,6 @@
       border-radius: 8px;
       width: 20%;
       text-align: center;
-    }
-    .column h2 {
-      color: #333;
-    }
-    .column p {
-      font-size: 18px;
-      color: #777;
     }
     footer {
       text-align: center;
@@ -90,17 +70,22 @@
 <body>
   <header>
     <h1>Welcome to My Book Store</h1>
-    <img src="https://i.imgur.com/FZBuJdL.jpeg" alt="Website Logo">
-    <div class="hamburger" onclick="toggleDropdown()">☰</div>
-    <nav class="dropdown" id="dropdownMenu">
+    <img src="https://i.imgur.com/FZBuJdL.jpeg" alt="Book Store Logo">
+    
+    <div class="navbar" onclick="toggleNav()">
+      <span>&#9776;</span>
+    </div>
+
+    <nav id="navMenu">
+      <a href="#">Home</a>
       <a href="sell.html">Earn with Book Store</a>
+      <a href="#">Contact Us</a>
     </nav>
   </header>
 
   <section>
     <div class="column">
       <h2>All Categories</h2>
-      <img src="https://i.imgur.com/cLFygv5.jpeg" alt="Rich Dad Poor Dad" style="width: 200px; height: auto;">
       <p>Explore our entire collection!</p>
     </div>
     <div class="column">
@@ -122,9 +107,9 @@
   </footer>
 
   <script>
-    function toggleDropdown() {
-      const dropdown = document.getElementById('dropdownMenu');
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    function toggleNav() {
+      const nav = document.getElementById('navMenu');
+      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
     }
   </script>
 </body>

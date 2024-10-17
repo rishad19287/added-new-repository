@@ -55,7 +55,7 @@
     <input type="text" placeholder="Your Name" required>
     <input type="text" placeholder="Book Title" required>
     <input type="number" placeholder="Price" required>
-    <textarea placeholder="Description" rows="4"></textarea>
+    <textarea placeholder="Book Description" rows="4"></textarea>
     <button type="submit">Submit</button>
   </form>
 </div>
@@ -63,8 +63,15 @@
 <script>
   function submitForm(event) {
     event.preventDefault();
-    alert('Details submitted! We will contact you soon.');
-    window.location.href = 'https://wa.me/9005334613';
+    const name = document.querySelector('input[placeholder="Your Name"]').value;
+    const bookTitle = document.querySelector('input[placeholder="Book Title"]').value;
+    const price = document.querySelector('input[placeholder="Price"]').value;
+    const description = document.querySelector('textarea').value;
+
+    const message = `New Seller!\nName: ${name}\nBook: ${bookTitle}\nPrice: ₹${price}\nDescription: ${description}`;
+    const whatsappURL = `https://wa.me/9005334613?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, '_blank');
   }
 </script>
 

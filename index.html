@@ -1,112 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>My Book Store</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Book Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .logo img {
+      width: 120px;
+    }
+
+    .navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      margin: 5px 0;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      display: block;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    section {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px;
+    }
+
+    .column {
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      width: 20%;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Book Store</h1>
-        <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Book Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#books">Books</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="books">
-            <div class="book">
-                <h2>Rich Dad Poor Dad</h2>
-                <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Rich Dad Poor Dad">
-                <p>Price: ₹199</p>
-            </div>
-            <div class="book">
-                <h2>Coming Soon</h2>
-                <p>Stay tuned for new arrivals!</p>
-            </div>
-            <div class="book">
-                <h2>Coming Soon</h2>
-                <p>Stay tuned for new arrivals!</p>
-            </div>
-            <div class="book">
-                <h2>Coming Soon</h2>
-                <p>Stay tuned for new arrivals!</p>
-            </div>
-        </section>
+<header>
+  <div class="logo">
+    <img src="Reader-page0001.jpg" alt="Book Store Logo">
+  </div>
 
-        <section id="sell-with-us">
-            <h2>Earn with Book Store</h2>
-            <button onclick="document.getElementById('sellForm').style.display='block'">Sell with Book Store</button>
+  <div class="hamburger" onclick="toggleNavbar()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-            <div id="sellForm" style="display:none;">
-                <h3>Seller Information</h3>
-                <form action="https://api.whatsapp.com/send?phone=9005334613" method="GET">
-                    <div class="form-group">
-                        <label for="bookTitle">Book Title:</label>
-                        <input type="text" id="bookTitle" name="bookTitle" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="authorName">Author Name:</label>
-                        <input type="text" id="authorName" name="authorName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="isbn">ISBN Number:</label>
-                        <input type="text" id="isbn" name="isbn">
-                    </div>
-                    <div class="form-group">
-                        <label for="publisher">Publisher:</label>
-                        <input type="text" id="publisher" name="publisher" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="genre">Genre/Category:</label>
-                        <input type="text" id="genre" name="genre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Price:</label>
-                        <input type="number" id="price" name="price" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="condition">Condition:</label>
-                        <select id="condition" name="condition" required>
-                            <option value="new">New</option>
-                            <option value="used">Used</option>
-                            <option value="like_new">Like New</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Book Description:</label>
-                        <textarea id="description" name="description"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="coverImage">Cover Image:</label>
-                        <input type="file" id="coverImage" name="coverImage" accept="image/*">
-                    </div>
-                    <div class="form-group">
-                        <label for="shippingDetails">Shipping Details:</label>
-                        <textarea id="shippingDetails" name="shippingDetails"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="returnPolicy">Return Policy:</label>
-                        <textarea id="returnPolicy" name="returnPolicy"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="stock">Stock Availability:</label>
-                        <input type="number" id="stock" name="stock" required>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </section>
-    </main>
+  <div class="navbar" id="navbar">
+    <a href="#">Home</a>
+    <a href="#">Books</a>
+    <a href="sell.html">Earn with Book Store</a>
+    <a href="#">Contact</a>
+  </div>
+</header>
 
-    <footer>
-        <p>© 2024 My Book Store. All rights reserved.</p>
-    </footer>
+<section>
+  <div class="column">
+    <h2>All Categories</h2>
+    <p>Explore our entire collection!</p>
+  </div>
+  <div class="column">
+    <h2>Coming Soon</h2>
+    <p>Stay tuned for new arrivals!</p>
+  </div>
+  <div class="column">
+    <h2>Coming Soon</h2>
+    <p>Stay tuned for new arrivals!</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 My Book Store. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    navbar.style.display = navbar.style.display === 'none' || navbar.style.display === '' ? 'flex' : 'none';
+  }
+</script>
+
 </body>
 </html>

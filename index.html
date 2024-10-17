@@ -1,46 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Book Store</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Book Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    header img {
+      width: 100px;
+      margin: 10px 0;
+    }
+    .navbar {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+    .navbar span {
+      font-size: 30px;
+    }
+    nav {
+      display: none;
+      background-color: #4CAF50;
+      padding: 10px;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      border-radius: 8px;
+    }
+    nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 0;
+    }
+    section {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px;
+    }
+    .column {
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      width: 20%;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Book Store</h1>
-        <img src="https://i.imgur.com/cLFygv5.jpeg" alt="Book Logo">
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Books</a>
-            <a href="#">Contact</a>
-            <div class="three-line-menu">
-                <a href="sell.html">☰</a>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <h1>Welcome to My Book Store</h1>
+    <img src="https://i.imgur.com/FZBuJdL.jpeg" alt="Book Store Logo">
 
-    <section>
-        <div class="column">
-            <h2>All Categories</h2>
-            <p>Explore our entire collection!</p>
-        </div>
-        <div class="column">
-            <h2>Coming Soon</h2>
-            <p>Stay tuned for new arrivals!</p>
-        </div>
-        <div class="column">
-            <h2>Coming Soon</h2>
-            <p>Stay tuned for new arrivals!</p>
-        </div>
-        <div class="column">
-            <h2>Coming Soon</h2>
-            <p>Stay tuned for new arrivals!</p>
-        </div>
-    </section>
+    <div class="navbar" onclick="toggleNav()">
+      <span>&#9776;</span>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 My Book Store. All rights reserved.</p>
-    </footer>
+    <nav id="navMenu">
+      <a href="#">Home</a>
+      <a href="sell.html">Earn with Book Store</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </header>
+
+  <section>
+    <div class="column">
+      <h2>All Categories</h2>
+      <p>Explore our entire collection!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 My Book Store. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById('navMenu');
+      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>

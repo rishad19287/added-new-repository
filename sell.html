@@ -4,74 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sell with Book Store</title>
-  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f3f4f6;
+      background-color: #f9f9f9;
       margin: 0;
-      padding: 0;
-    }
-    .container {
-      width: 50%;
-      margin: 50px auto;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
-      border-radius: 8px;
-    }
-    h1 {
-      text-align: center;
-      color: #4CAF50;
     }
     form {
-      display: flex;
-      flex-direction: column;
-    }
-    label {
-      margin: 10px 0 5px;
-      font-weight: bold;
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
     }
     input, textarea {
+      width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 4px;
+      margin: 10px 0;
       border: 1px solid #ccc;
+      border-radius: 4px;
     }
     button {
-      padding: 10px;
       background-color: #4CAF50;
       color: white;
       border: none;
-      border-radius: 4px;
+      padding: 10px;
+      width: 100%;
       cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Sell with Book Store</h1>
-    <form action="https://wa.me/9005334613" method="post" target="_blank">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
+  <h1>Sell with Book Store</h1>
+  <form action="https://wa.me/9005334613" method="get" target="_blank">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
 
-      <label for="bookTitle">Book Title</label>
-      <input type="text" id="bookTitle" name="bookTitle" required>
+    <label for="contact">Contact Number:</label>
+    <input type="tel" id="contact" name="contact" required>
 
-      <label for="price">Price (INR)</label>
-      <input type="number" id="price" name="price" required>
+    <label for="book-title">Book Title:</label>
+    <input type="text" id="book-title" name="book-title" required>
 
-      <label for="description">Book Description</label>
-      <textarea id="description" name="description" rows="5" required></textarea>
+    <label for="price">Price (INR):</label>
+    <input type="number" id="price" name="price" required>
 
-      <label for="contact">Your Contact Number</label>
-      <input type="tel" id="contact" name="contact" required>
+    <label for="description">Book Description:</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
 
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+    <label for="location">Pickup/Shipping Location:</label>
+    <input type="text" id="location" name="location" required>
+
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>

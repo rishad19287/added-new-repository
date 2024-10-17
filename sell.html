@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell with Book Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 50px;
+    }
+    .form-container {
+      max-width: 700px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent default form submission
+      // Get form values
+      const sellerName = document.querySelector('input[name="sellerName"]').value;
+      const sellerPhone = document.querySelector('input[name="sellerPhone"]').value;
+      const sellerEmail = document.querySelector('input[name="sellerEmail"]').value;
+      const sellerAddress = document.querySelector('textarea[name="sellerAddress"]').value;
+      const bookTitle = document.querySelector('input[name="bookTitle"]').value;
+      const authorName = document.querySelector('input[name="authorName"]').value;
+      const bookPrice = document.querySelector('input[name="bookPrice"]').value;
+
+      // Confirmation message
+      alert(`Thank you, ${sellerName}! Your details have been submitted successfully.`);
+
+      // Format the WhatsApp message
+      const message = `Name: ${sellerName}\nPhone: ${sellerPhone}\nEmail: ${sellerEmail}\nAddress: ${sellerAddress}\nBook Title: ${bookTitle}\nAuthor: ${authorName}\nPrice: ${bookPrice}`;
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=919005334613&text=${encodeURIComponent(message)}`;
+
+      // Redirect to WhatsApp
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Sell with Book Store</h1>
+    <form onsubmit="handleSubmit(event)">
+      <!-- Seller Information -->
+      <h3>Seller Information</h3>
+      <input type="text" name="sellerName" placeholder="Full Name" required>
+      <input type="text" name="sellerPhone" placeholder="Phone Number" required>
+      <input type="email" name="sellerEmail" placeholder="Email Address" required>
+      <textarea name="sellerAddress" rows="3" placeholder="Complete Address" required></textarea>
+
+      <!-- Book Information -->
+      <h3>Book Information</h3>
+      <input type="text" name="bookTitle" placeholder="Book Title" required>
+      <input type="text" name="authorName" placeholder="Author Name" required>
+      <input type="text" name="publisher" placeholder="Publisher Name">
+      <input type="number" name="bookPrice" placeholder="Book Price (INR)" required>
+      <input type="text" name="isbn" placeholder="ISBN Number (Optional)">
+      <select name="bookCondition" required>
+        <option value="">Select Book Condition</option>
+        <option value="New">New</option>
+        <option value="Used - Like New">Used - Like New</option>
+        <option value="Used - Good">Used - Good</option>
+        <option value="Used - Acceptable">Used - Acceptable</option>
+      </select>
+      <textarea name="bookDescription" rows="4" placeholder="Brief Description of the Book" required></textarea>
+
+      <!-- Additional Information -->
+      <h3>Additional Information</h3>
+      <input type="text" name="quantity" placeholder="Number of Copies Available" required>
+      <input type="text" name="shippingDetails" placeholder="Shipping Time (e.g., 2-5 days)">
+      <textarea name="specialNotes" rows="3" placeholder="Any Special Notes or Instructions"></textarea>
+
+      <button type="submit">Submit Details via WhatsApp</button>
+    </form>
+  </div>
+</body>
+</html>
 

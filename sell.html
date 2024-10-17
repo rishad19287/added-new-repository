@@ -7,19 +7,19 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f3f4f6;
       margin: 0;
-      padding: 20px;
+      padding: 50px;
     }
     form {
-      max-width: 500px;
-      margin: 0 auto;
       background-color: white;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: auto;
     }
-    input, textarea {
+    input, select {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
@@ -27,37 +27,58 @@
       border-radius: 4px;
     }
     button {
+      width: 100%;
+      padding: 10px;
       background-color: #4CAF50;
       color: white;
       border: none;
-      padding: 10px;
-      width: 100%;
+      border-radius: 4px;
       cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <h1>Sell with Book Store</h1>
-  <form action="https://wa.me/9005334613" method="get" target="_blank">
-    <label for="name">Your Name:</label>
+  <h2>Sell Your Book</h2>
+  <form onsubmit="submitForm(event)">
+    <label for="name">Your Name</label>
     <input type="text" id="name" name="name" required>
 
-    <label for="contact">Contact Number:</label>
-    <input type="tel" id="contact" name="contact" required>
+    <label for="book">Book Title</label>
+    <input type="text" id="book" name="book" required>
 
-    <label for="book-title">Book Title:</label>
-    <input type="text" id="book-title" name="book-title" required>
-
-    <label for="price">Price (INR):</label>
+    <label for="price">Price (INR)</label>
     <input type="number" id="price" name="price" required>
 
-    <label for="description">Book Description:</label>
-    <textarea id="description" name="description" rows="4" required></textarea>
-
-    <label for="location">Pickup/Shipping Location:</label>
-    <input type="text" id="location" name="location" required>
+    <label for="payment">Select Payment Option</label>
+    <select id="payment" name="payment" required>
+      <option value="paypal">PayPal</option>
+      <option value="paytm">Paytm</option>
+      <option value="phonepe">PhonePe</option>
+    </select>
 
     <button type="submit">Submit</button>
   </form>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const book = document.getElementById('book').value;
+      const price = document.getElementById('price').value;
+      const payment = document.getElementById('payment').value;
+
+      const message = `Seller Details:\nName: ${name}\nBook: ${book}\nPrice: ${price}\nPayment: ${payment}`;
+
+      // Send details to WhatsApp
+      const phoneNumber = '+919005334613';
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>

@@ -8,22 +8,39 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      width: 300px;
+    }
+
+    .form-container h2 {
       text-align: center;
-      padding: 50px;
     }
 
     input, textarea {
-      width: 80%;
-      margin: 10px;
+      width: 100%;
       padding: 10px;
-      border: 1px solid #ccc;
+      margin: 10px 0;
+      border: 1px solid #ddd;
       border-radius: 5px;
     }
 
     button {
+      width: 100%;
+      padding: 10px;
       background-color: #4CAF50;
       color: white;
-      padding: 10px 20px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -31,12 +48,25 @@
   </style>
 </head>
 <body>
-  <h1>Sell with Book Store</h1>
-  <p>Fill in your details to sell books on our platform!</p>
-  <input type="text" placeholder="Your Name" required><br>
-  <input type="email" placeholder="Your Email" required><br>
-  <input type="text" placeholder="Your Phone Number" required><br>
-  <textarea rows="5" placeholder="Book Details"></textarea><br>
-  <button>Submit</button>
+
+<div class="form-container">
+  <h2>Sell Your Book</h2>
+  <form onsubmit="submitForm(event)">
+    <input type="text" placeholder="Your Name" required>
+    <input type="text" placeholder="Book Title" required>
+    <input type="number" placeholder="Price" required>
+    <textarea placeholder="Description" rows="4"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+  function submitForm(event) {
+    event.preventDefault();
+    alert('Details submitted! We will contact you soon.');
+    window.location.href = 'https://wa.me/9005334613';
+  }
+</script>
+
 </body>
 </html>

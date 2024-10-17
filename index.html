@@ -33,18 +33,20 @@
       justify-content: space-around;
       padding: 50px;
     }
-    .book {
+    .column {
       background-color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
       border-radius: 8px;
-      width: 30%;
+      width: 20%;
       text-align: center;
     }
-    .book img {
-      width: 100%; /* Adjust image size as needed */
-      height: auto;
-      border-radius: 5px;
+    .column h2 {
+      color: #333;
+    }
+    .column p {
+      font-size: 18px;
+      color: #777;
     }
     footer {
       text-align: center;
@@ -55,32 +57,68 @@
       width: 100%;
       bottom: 0;
     }
+    /* Button and Modal Styles */
+    .sell-btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 50%;
+      text-align: center;
+    }
+    .close {
+      color: red;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Welcome to My Book Store</h1>
-    <img src="https://example.com/path_to_your_image/logo.png" alt="Book Logo"> <!-- Replace with your logo URL -->
+    <img src="—Pngtree—open book flat design_4124286.png" alt="Book Logo">
     <nav>
       <a href="#">Home</a> | <a href="#">Books</a> | <a href="#">Contact</a>
     </nav>
   </header>
 
   <section>
-    <div class="book">
+    <div class="column">
       <h2>Rich Dad Poor Dad</h2>
-      <img src="https://pin.it/2MKCnY3o1" alt="Rich Dad Poor Dad"> <!-- Replace with the actual image URL if needed -->
+      <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Rich Dad Poor Dad" width="150">
       <p>Price: ₹199</p>
+      <button class="sell-btn" onclick="openModal()">Earn with Book Store</button>
     </div>
-    <div class="book">
+    <div class="column">
       <h2>Coming Soon</h2>
       <p>Stay tuned for new arrivals!</p>
     </div>
-    <div class="book">
+    <div class="column">
       <h2>Coming Soon</h2>
       <p>Stay tuned for new arrivals!</p>
     </div>
-    <div class="book">
+    <div class="column">
       <h2>Coming Soon</h2>
       <p>Stay tuned for new arrivals!</p>
     </div>
@@ -89,5 +127,39 @@
   <footer>
     <p>&copy; 2024 My Book Store. All rights reserved.</p>
   </footer>
+
+  <!-- Modal Structure -->
+  <div id="sellModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Sell with Book Store</h2>
+      <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="book">Book Title:</label><br>
+        <input type="text" id="book" name="book" value="Rich Dad Poor Dad" readonly><br><br>
+
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" required><br><br>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to handle the modal
+    function openModal() {
+      document.getElementById("sellModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("sellModal").style.display = "none";
+    }
+  </script>
 </body>
 </html>

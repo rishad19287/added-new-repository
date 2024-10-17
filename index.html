@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Book Store</title>
-  <link rel="stylesheet" href="styles.css">
   <style>
     * {
       margin: 0;
@@ -76,29 +75,6 @@
       margin-bottom: 5px;
     }
 
-    .discount {
-      background-color: red;
-      color: white;
-      font-size: 14px;
-      padding: 2px 5px;
-      border-radius: 5px;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
-
-    .rating {
-      margin-top: 5px;
-      color: gold;
-      font-size: 18px;
-    }
-
-    .column p {
-      font-size: 18px;
-      color: #777;
-      margin: 5px 0;
-    }
-
     .actions {
       display: flex;
       justify-content: space-between;
@@ -124,6 +100,44 @@
       color: white;
     }
 
+    .form-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      text-align: center;
+    }
+
+    .form-box input,
+    .form-box textarea {
+      width: 90%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-box button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
     footer {
       text-align: center;
       padding: 10px;
@@ -147,62 +161,39 @@
 
   <!-- Book Section -->
   <section>
-    <!-- Rich Dad Poor Dad -->
     <div class="column">
-      <span class="discount">10% OFF</span>
       <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Rich Dad Poor Dad">
       <h2>Rich Dad Poor Dad</h2>
       <p>Price: ₹199</p>
-      <div class="rating">⭐⭐⭐⭐☆</div>
-      <p>A great financial education book to transform your mindset.</p>
       <div class="actions">
         <button class="add-cart">Add to Cart</button>
         <button class="wishlist">Wishlist</button>
       </div>
     </div>
 
-    <!-- Placeholder 1 -->
+    <!-- Placeholder Book -->
     <div class="column">
-      <span class="discount">20% OFF</span>
       <img src="https://via.placeholder.com/150" alt="New Arrival">
-      <h2>Book Title 2</h2>
-      <p>Price: ₹299</p>
-      <div class="rating">⭐⭐⭐☆☆</div>
-      <p>Stay tuned for new exciting books!</p>
-      <div class="actions">
-        <button class="add-cart">Add to Cart</button>
-        <button class="wishlist">Wishlist</button>
-      </div>
-    </div>
-
-    <!-- Placeholder 2 -->
-    <div class="column">
-      <span class="discount">15% OFF</span>
-      <img src="https://via.placeholder.com/150" alt="New Arrival">
-      <h2>Book Title 3</h2>
-      <p>Price: ₹399</p>
-      <div class="rating">⭐⭐⭐⭐⭐</div>
-      <p>Another exciting title coming soon!</p>
-      <div class="actions">
-        <button class="add-cart">Add to Cart</button>
-        <button class="wishlist">Wishlist</button>
-      </div>
-    </div>
-
-    <!-- Placeholder 3 -->
-    <div class="column">
-      <span class="discount">5% OFF</span>
-      <img src="https://via.placeholder.com/150" alt="New Arrival">
-      <h2>Book Title 4</h2>
-      <p>Price: ₹499</p>
-      <div class="rating">⭐⭐⭐☆☆</div>
-      <p>Stay tuned for more amazing books!</p>
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new books!</p>
       <div class="actions">
         <button class="add-cart">Add to Cart</button>
         <button class="wishlist">Wishlist</button>
       </div>
     </div>
   </section>
+
+  <!-- Form Container -->
+  <div class="form-container" id="formContainer">
+    <div class="form-box">
+      <h2>Sell with Book Store</h2>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="text" id="phone" placeholder="Your Phone Number" required>
+      <textarea id="details" rows="4" placeholder="Book Details"></textarea>
+      <button onclick="submitForm()">Submit</button>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -211,7 +202,17 @@
 
   <script>
     function openForm() {
-      alert("Earn with Book Store feature coming soon!");
+      document.getElementById("formContainer").style.display = "flex";
+    }
+
+    function submitForm() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const details = document.getElementById("details").value;
+
+      const whatsappLink = `https://wa.me/9005334613?text=Name:%20${name}%0AEmail:%20${email}%0APhone:%20${phone}%0ABook%20Details:%20${details}`;
+      window.open(whatsappLink, "_blank");
     }
   </script>
 </body>

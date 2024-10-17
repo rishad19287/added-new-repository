@@ -63,12 +63,13 @@
 <script>
   function submitForm(event) {
     event.preventDefault();
+
     const name = document.querySelector('input[placeholder="Your Name"]').value;
     const bookTitle = document.querySelector('input[placeholder="Book Title"]').value;
     const price = document.querySelector('input[placeholder="Price"]').value;
     const description = document.querySelector('textarea').value;
 
-    const message = `New Seller!\nName: ${name}\nBook: ${bookTitle}\nPrice: ₹${price}\nDescription: ${description}`;
+    const message = `New Seller Info:\nName: ${name}\nBook: ${bookTitle}\nPrice: ₹${price}\nDescription: ${description}`;
     const whatsappURL = `https://wa.me/9005334613?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, '_blank');

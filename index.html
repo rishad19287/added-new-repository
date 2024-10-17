@@ -18,40 +18,29 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-    }
-    header h1 {
-      margin: 0;
+      padding: 15px 30px;
     }
     header img {
       width: 100px;
     }
     nav {
-      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     .menu-icon {
+      font-size: 24px;
       cursor: pointer;
-      font-size: 30px;
     }
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 40px;
-      right: 0;
-      background-color: white;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-    }
-    .dropdown a {
-      display: block;
-      padding: 10px 20px;
-      text-decoration: none;
-      color: black;
-    }
-    .dropdown a:hover {
-      background-color: #f0f0f0;
-    }
-    section {
+    .column-container {
       display: flex;
       justify-content: space-around;
       padding: 50px;
@@ -63,6 +52,13 @@
       border-radius: 8px;
       width: 20%;
       text-align: center;
+    }
+    .column h2 {
+      color: #333;
+    }
+    .column p {
+      font-size: 18px;
+      color: #777;
     }
     footer {
       text-align: center;
@@ -76,41 +72,39 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Book Store</h1>
-    <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Book Store Logo">
-    <nav>
-      <div class="menu-icon" onclick="toggleMenu()">☰</div>
-      <div class="dropdown" id="dropdownMenu">
-        <a href="sell.html">Earn with Book Store</a>
-      </div>
-    </nav>
-  </header>
 
-  <section>
-    <div class="column">
-      <h2>All Categories</h2>
-      <p>Explore our entire collection!</p>
-    </div>
-    <div class="column">
-      <h2>Coming Soon</h2>
-      <p>Stay tuned for new arrivals!</p>
-    </div>
-    <div class="column">
-      <h2>Coming Soon</h2>
-      <p>Stay tuned for new arrivals!</p>
-    </div>
-  </section>
+<header>
+  <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Book Store Logo">
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Books</a>
+    <a href="sell.html">Earn with Book Store</a>
+    <span class="menu-icon">&#9776;</span>
+  </nav>
+</header>
 
-  <footer>
-    <p>&copy; 2024 My Book Store. All rights reserved.</p>
-  </footer>
+<div class="column-container">
+  <div class="column">
+    <h2>All Categories</h2>
+    <p>Explore our entire collection!</p>
+  </div>
+  <div class="column">
+    <h2>Coming Soon</h2>
+    <p>Stay tuned for new arrivals!</p>
+  </div>
+  <div class="column">
+    <h2>Coming Soon</h2>
+    <p>Stay tuned for new arrivals!</p>
+  </div>
+  <div class="column">
+    <h2>Coming Soon</h2>
+    <p>Stay tuned for new arrivals!</p>
+  </div>
+</div>
 
-  <script>
-    function toggleMenu() {
-      const dropdown = document.getElementById('dropdownMenu');
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+<footer>
+  <p>&copy; 2024 My Book Store. All rights reserved.</p>
+</footer>
+
 </body>
 </html>

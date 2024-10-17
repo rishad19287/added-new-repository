@@ -10,63 +10,60 @@
       font-family: Arial, sans-serif;
       background-color: #f3f4f6;
       margin: 0;
+      padding: 0;
     }
-
     header {
       background-color: #4CAF50;
       color: white;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 20px;
+    }
+    header h1 {
+      margin: 0;
+    }
+    header img {
+      width: 100px;
+    }
+    nav {
       position: relative;
     }
-
-    .hamburger {
-      position: absolute;
-      right: 20px;
-      top: 20px;
+    .menu-icon {
       cursor: pointer;
-      display: inline-block;
+      font-size: 30px;
     }
-
-    .hamburger div {
-      width: 30px;
-      height: 4px;
-      background-color: white;
-      margin: 6px 0;
-    }
-
-    .menu {
+    .dropdown {
       display: none;
-      flex-direction: column;
-      background-color: #4CAF50;
       position: absolute;
-      top: 70px;
-      right: 10px;
-      width: 200px;
-      border-radius: 8px;
-      padding: 10px;
+      top: 40px;
+      right: 0;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
     }
-
-    .menu a {
-      color: white;
+    .dropdown a {
+      display: block;
+      padding: 10px 20px;
       text-decoration: none;
-      margin: 10px 0;
+      color: black;
     }
-
+    .dropdown a:hover {
+      background-color: #f0f0f0;
+    }
     section {
       display: flex;
       justify-content: space-around;
       padding: 50px;
     }
-
     .column {
       background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
       border-radius: 8px;
       width: 20%;
       text-align: center;
     }
-
     footer {
       text-align: center;
       padding: 10px;
@@ -79,42 +76,41 @@
   </style>
 </head>
 <body>
+  <header>
+    <h1>Welcome to My Book Store</h1>
+    <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Book Store Logo">
+    <nav>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <div class="dropdown" id="dropdownMenu">
+        <a href="sell.html">Earn with Book Store</a>
+      </div>
+    </nav>
+  </header>
 
-<header>
-  <h1>Welcome to My Book Store</h1>
-  <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Book Logo" width="150">
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="menu" id="menu">
-    <a href="#">Home</a>
-    <a href="sell.html">Earn with Book Store</a>
-  </div>
-</header>
+  <section>
+    <div class="column">
+      <h2>All Categories</h2>
+      <p>Explore our entire collection!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+  </section>
 
-<section>
-  <div class="column">
-    <h2>All Categories</h2>
-    <p>Explore our collection of books!</p>
-  </div>
-  <div class="column">
-    <h2>Coming Soon</h2>
-    <p>Stay tuned for new arrivals!</p>
-  </div>
-</section>
+  <footer>
+    <p>&copy; 2024 My Book Store. All rights reserved.</p>
+  </footer>
 
-<footer>
-  <p>&copy; 2024 My Book Store. All rights reserved.</p>
-</footer>
-
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
-  }
-</script>
-
+  <script>
+    function toggleMenu() {
+      const dropdown = document.getElementById('dropdownMenu');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>

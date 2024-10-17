@@ -6,7 +6,6 @@
   <title>My Book Store</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* CSS Reset */
     * {
       margin: 0;
       padding: 0;
@@ -21,7 +20,7 @@
     header {
       background-color: #4CAF50;
       color: white;
-      padding: 20px;
+      padding: 15px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -41,63 +40,16 @@
       font-size: 24px;
     }
 
-    /* Hamburger Menu */
     .hamburger {
       font-size: 30px;
       cursor: pointer;
     }
 
-    .form-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      padding: 20px;
-      z-index: 1000;
-    }
-
-    .form-popup h2 {
-      margin-bottom: 15px;
-    }
-
-    .form-popup input, .form-popup button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
-    .form-popup button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .form-popup button:hover {
-      background-color: #45a049;
-    }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-
     section {
       display: flex;
       justify-content: space-around;
-      padding: 50px;
+      flex-wrap: wrap;
+      padding: 40px;
     }
 
     .column {
@@ -105,17 +57,71 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
       border-radius: 8px;
-      width: 20%;
+      width: 22%;
+      margin: 15px;
+      position: relative;
       text-align: center;
+    }
+
+    .column img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 10px;
     }
 
     .column h2 {
       color: #333;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .discount {
+      background-color: red;
+      color: white;
+      font-size: 14px;
+      padding: 2px 5px;
+      border-radius: 5px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .rating {
+      margin-top: 5px;
+      color: gold;
+      font-size: 18px;
     }
 
     .column p {
       font-size: 18px;
       color: #777;
+      margin: 5px 0;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .actions button {
+      width: 48%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .add-cart {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .wishlist {
+      background-color: #FF9800;
+      color: white;
     }
 
     footer {
@@ -141,63 +147,71 @@
 
   <!-- Book Section -->
   <section>
+    <!-- Rich Dad Poor Dad -->
     <div class="column">
+      <span class="discount">10% OFF</span>
+      <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Rich Dad Poor Dad">
       <h2>Rich Dad Poor Dad</h2>
-      <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Rich Dad Poor Dad" width="150">
       <p>Price: ₹199</p>
+      <div class="rating">⭐⭐⭐⭐☆</div>
+      <p>A great financial education book to transform your mindset.</p>
+      <div class="actions">
+        <button class="add-cart">Add to Cart</button>
+        <button class="wishlist">Wishlist</button>
+      </div>
     </div>
+
+    <!-- Placeholder 1 -->
     <div class="column">
-      <h2>Coming Soon</h2>
-      <p>Stay tuned for new arrivals!</p>
+      <span class="discount">20% OFF</span>
+      <img src="https://via.placeholder.com/150" alt="New Arrival">
+      <h2>Book Title 2</h2>
+      <p>Price: ₹299</p>
+      <div class="rating">⭐⭐⭐☆☆</div>
+      <p>Stay tuned for new exciting books!</p>
+      <div class="actions">
+        <button class="add-cart">Add to Cart</button>
+        <button class="wishlist">Wishlist</button>
+      </div>
     </div>
+
+    <!-- Placeholder 2 -->
     <div class="column">
-      <h2>Coming Soon</h2>
-      <p>Stay tuned for new arrivals!</p>
+      <span class="discount">15% OFF</span>
+      <img src="https://via.placeholder.com/150" alt="New Arrival">
+      <h2>Book Title 3</h2>
+      <p>Price: ₹399</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <p>Another exciting title coming soon!</p>
+      <div class="actions">
+        <button class="add-cart">Add to Cart</button>
+        <button class="wishlist">Wishlist</button>
+      </div>
     </div>
+
+    <!-- Placeholder 3 -->
     <div class="column">
-      <h2>Coming Soon</h2>
-      <p>Stay tuned for new arrivals!</p>
+      <span class="discount">5% OFF</span>
+      <img src="https://via.placeholder.com/150" alt="New Arrival">
+      <h2>Book Title 4</h2>
+      <p>Price: ₹499</p>
+      <div class="rating">⭐⭐⭐☆☆</div>
+      <p>Stay tuned for more amazing books!</p>
+      <div class="actions">
+        <button class="add-cart">Add to Cart</button>
+        <button class="wishlist">Wishlist</button>
+      </div>
     </div>
   </section>
-
-  <!-- Form Popup -->
-  <div class="overlay" id="overlay" onclick="closeForm()"></div>
-  <div class="form-popup" id="formPopup">
-    <h2>Earn with Book Store</h2>
-    <form onsubmit="sendToWhatsApp(); return false;">
-      <input type="text" placeholder="Your Name" required>
-      <input type="text" placeholder="Your Phone Number" required>
-      <input type="text" placeholder="Book Name" required>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 My Book Store. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript -->
   <script>
     function openForm() {
-      document.getElementById("formPopup").style.display = "block";
-      document.getElementById("overlay").style.display = "block";
-    }
-
-    function closeForm() {
-      document.getElementById("formPopup").style.display = "none";
-      document.getElementById("overlay").style.display = "none";
-    }
-
-    function sendToWhatsApp() {
-      const name = document.querySelector("input[placeholder='Your Name']").value;
-      const phone = document.querySelector("input[placeholder='Your Phone Number']").value;
-      const book = document.querySelector("input[placeholder='Book Name']").value;
-
-      const message = `Name: ${name}\nPhone: ${phone}\nBook: ${book}`;
-      const whatsappURL = `https://wa.me/9005334613?text=${encodeURIComponent(message)}`;
-
-      window.open(whatsappURL, "_blank");
+      alert("Earn with Book Store feature coming soon!");
     }
   </script>
 </body>

@@ -52,7 +52,16 @@
       background-color: #f0f0f0;
     }
     section {
+      display: flex;
+      justify-content: space-around;
       padding: 50px;
+    }
+    .column {
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      width: 20%;
       text-align: center;
     }
     footer {
@@ -73,22 +82,33 @@
     <nav>
       <div class="menu-icon" onclick="toggleMenu()">☰</div>
       <div class="dropdown" id="dropdownMenu">
+        <a href="sell.html">Sell Your Products</a>
         <a href="sell.html">Earn with Book Store</a>
-        <a href="how-to-sell.html">How to Sell on Book Store</a>
-        <a href="contact.html">Contact Us</a>
       </div>
     </nav>
   </header>
 
   <section>
-    <h2>Sell Your Products on My Book Store</h2>
-    <p>Want to earn money by selling your books? Here’s how:</p>
-    <ol>
-      <li><strong>Submit Your Details:</strong> Fill out the <a href="sell.html">seller form</a> with your information.</li>
-      <li><strong>Review Process:</strong> We’ll review your submission.</li>
-      <li><strong>Post Your Product:</strong> After approval, your product will be posted on our website.</li>
-    </ol>
-    <p>Start your selling journey today!</p>
+    <div class="column">
+      <h2>All Categories</h2>
+      <p>Explore our entire collection!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Special Offers</h2>
+      <p>Check out our latest discounts!</p>
+    </div>
+    <div class="column">
+      <h2>Sell Your Products</h2>
+      <p>Want to earn money by selling your books? Here’s how:</p>
+      <p><a href="sell.html">Submit Your Details</a></p>
+      <p><a href="sell.html">Review Process</a></p>
+      <p><a href="sell.html">Post Your Product</a></p>
+      <p>Start your selling journey today!</p>
+    </div>
   </section>
 
   <footer>

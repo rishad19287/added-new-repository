@@ -26,6 +26,22 @@
       width: 120px;
     }
 
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .hamburger {
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
     .navbar {
       display: none;
       flex-direction: column;
@@ -44,22 +60,15 @@
       margin: 5px 0;
     }
 
-    .hamburger {
-      cursor: pointer;
-      display: block;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
-    }
-
     section {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .columns {
       display: flex;
       justify-content: space-around;
-      padding: 50px;
+      padding: 20px;
     }
 
     .column {
@@ -88,6 +97,7 @@
   <div class="logo">
     <img src="Reader-page0001.jpg" alt="Book Store Logo">
   </div>
+  <h1>Welcome to My Book Store</h1>
 
   <div class="hamburger" onclick="toggleNavbar()">
     <div></div>
@@ -104,17 +114,22 @@
 </header>
 
 <section>
-  <div class="column">
-    <h2>All Categories</h2>
-    <p>Explore our entire collection!</p>
-  </div>
-  <div class="column">
-    <h2>Coming Soon</h2>
-    <p>Stay tuned for new arrivals!</p>
-  </div>
-  <div class="column">
-    <h2>Coming Soon</h2>
-    <p>Stay tuned for new arrivals!</p>
+  <h2>All Categories</h2>
+  <p>Explore our entire collection!</p>
+  
+  <div class="columns">
+    <div class="column">
+      <h3>Coming Soon</h3>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h3>Coming Soon</h3>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h3>Coming Soon</h3>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
   </div>
 </section>
 

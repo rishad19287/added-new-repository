@@ -4,81 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sell with Book Store</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f4f6;
-      margin: 0;
-      padding: 50px;
-    }
-    form {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
-      margin: auto;
-    }
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Sell Your Book</h2>
-  <form onsubmit="submitForm(event)">
-    <label for="name">Your Name</label>
-    <input type="text" id="name" name="name" required>
+  <header>
+    <h1>Sell with Book Store</h1>
+  </header>
 
-    <label for="book">Book Title</label>
-    <input type="text" id="book" name="book" required>
+  <form action="https://wa.me/919005334613" method="get" target="_blank">
+    <label for="seller-name">Seller Name:</label>
+    <input type="text" id="seller-name" name="seller_name" required><br>
 
-    <label for="price">Price (INR)</label>
-    <input type="number" id="price" name="price" required>
+    <label for="book-title">Book Title:</label>
+    <input type="text" id="book-title" name="book_title" required><br>
 
-    <label for="payment">Select Payment Option</label>
-    <select id="payment" name="payment" required>
+    <label for="book-price">Price (₹):</label>
+    <input type="number" id="book-price" name="book_price" required><br>
+
+    <label for="payment-method">Payment Method:</label>
+    <select id="payment-method" name="payment_method" required>
       <option value="paypal">PayPal</option>
       <option value="paytm">Paytm</option>
       <option value="phonepe">PhonePe</option>
-    </select>
+    </select><br>
 
-    <button type="submit">Submit</button>
+    <button type="submit">Submit Details</button>
   </form>
 
-  <script>
-    function submitForm(event) {
-      event.preventDefault();
-
-      const name = document.getElementById('name').value;
-      const book = document.getElementById('book').value;
-      const price = document.getElementById('price').value;
-      const payment = document.getElementById('payment').value;
-
-      const message = `Seller Details:\nName: ${name}\nBook: ${book}\nPrice: ${price}\nPayment: ${payment}`;
-
-      // Send details to WhatsApp
-      const phoneNumber = '+919005334613';
-      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-      window.open(url, '_blank');
-    }
-  </script>
+  <footer>
+    <p>&copy; 2024 My Book Store. All rights reserved.</p>
+  </footer>
 </body>
 </html>

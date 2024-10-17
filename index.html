@@ -1,125 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Book Store</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f4f6;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    header img {
-      width: 150px;
-      margin: 10px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    section {
-      display: flex;
-      justify-content: space-around;
-      padding: 50px;
-    }
-    .column {
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      border-radius: 8px;
-      width: 20%;
-      text-align: center;
-    }
-    .column h2 {
-      color: #333;
-    }
-    .column p {
-      font-size: 18px;
-      color: #777;
-    }
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #333;
-      color: white;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
-    .search-container {
-      display: flex;
-      justify-content: flex-end;
-      margin: 20px;
-    }
-    .search-container input[type="text"] {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      width: 200px;
-    }
-    .search-container button {
-      padding: 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-    .search-container button:hover {
-      background-color: #45a049;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>My Book Store</title>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Book Store</h1>
-    <img src="—Pngtree—open book flat design_4124286.png" alt="Book Logo">
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="books.html">Books</a> |
-      <a href="sell.html">Earn with Book Store</a> |
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header>
+        <h1>Welcome to My Book Store</h1>
+        <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Book Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <div class="search-container">
-    <input type="text" placeholder="Search for books...">
-    <button>Search</button>
-  </div>
+    <main>
+        <section id="books">
+            <div class="book">
+                <h2>Rich Dad Poor Dad</h2>
+                <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Rich Dad Poor Dad">
+                <p>Price: ₹199</p>
+            </div>
+            <div class="book">
+                <h2>Coming Soon</h2>
+                <p>Stay tuned for new arrivals!</p>
+            </div>
+            <div class="book">
+                <h2>Coming Soon</h2>
+                <p>Stay tuned for new arrivals!</p>
+            </div>
+            <div class="book">
+                <h2>Coming Soon</h2>
+                <p>Stay tuned for new arrivals!</p>
+            </div>
+        </section>
 
-  <section>
-    <div class="column">
-      <h2>All Categories</h2>
-      <p>Explore our entire collection!</p>
-    </div>
-    <div class="column">
-      <h2>Coming Soon</h2>
-      <p>Stay tuned for new arrivals!</p>
-    </div>
-    <div class="column">
-      <h2>Coming Soon</h2>
-      <p>Stay tuned for new arrivals!</p>
-    </div>
-    <div class="column">
-      <h2>Coming Soon</h2>
-      <p>Stay tuned for new arrivals!</p>
-    </div>
-  </section>
+        <section id="sell-with-us">
+            <h2>Earn with Book Store</h2>
+            <button onclick="document.getElementById('sellForm').style.display='block'">Sell with Book Store</button>
 
-  <footer>
-    <p>&copy; 2024 My Book Store. All rights reserved.</p>
-  </footer>
+            <div id="sellForm" style="display:none;">
+                <h3>Seller Information</h3>
+                <form action="https://api.whatsapp.com/send?phone=9005334613" method="GET">
+                    <div class="form-group">
+                        <label for="bookTitle">Book Title:</label>
+                        <input type="text" id="bookTitle" name="bookTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="authorName">Author Name:</label>
+                        <input type="text" id="authorName" name="authorName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="isbn">ISBN Number:</label>
+                        <input type="text" id="isbn" name="isbn">
+                    </div>
+                    <div class="form-group">
+                        <label for="publisher">Publisher:</label>
+                        <input type="text" id="publisher" name="publisher" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre/Category:</label>
+                        <input type="text" id="genre" name="genre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="condition">Condition:</label>
+                        <select id="condition" name="condition" required>
+                            <option value="new">New</option>
+                            <option value="used">Used</option>
+                            <option value="like_new">Like New</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Book Description:</label>
+                        <textarea id="description" name="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="coverImage">Cover Image:</label>
+                        <input type="file" id="coverImage" name="coverImage" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="shippingDetails">Shipping Details:</label>
+                        <textarea id="shippingDetails" name="shippingDetails"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="returnPolicy">Return Policy:</label>
+                        <textarea id="returnPolicy" name="returnPolicy"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Stock Availability:</label>
+                        <input type="number" id="stock" name="stock" required>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 My Book Store. All rights reserved.</p>
+    </footer>
 </body>
 </html>

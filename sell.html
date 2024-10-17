@@ -8,71 +8,79 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f3f4f6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      margin: 0;
+      padding: 50px;
     }
-
     .form-container {
+      max-width: 700px;
+      margin: auto;
       background-color: white;
-      padding: 20px;
+      padding: 30px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-      width: 300px;
     }
-
-    .form-container h2 {
+    h1 {
       text-align: center;
+      color: #333;
     }
-
-    input, textarea {
+    input, textarea, select {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
-      border: 1px solid #ddd;
+      border: 1px solid #ccc;
       border-radius: 5px;
     }
-
     button {
       width: 100%;
-      padding: 10px;
+      padding: 15px;
       background-color: #4CAF50;
       color: white;
       border: none;
       border-radius: 5px;
+      font-size: 18px;
       cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
+  <div class="form-container">
+    <h1>Sell with Book Store</h1>
+    <form action="https://api.whatsapp.com/send?phone=9005334613" method="get" target="_blank">
+      
+      <!-- Seller Information -->
+      <h3>Seller Information</h3>
+      <input type="text" name="sellerName" placeholder="Full Name" required>
+      <input type="text" name="sellerPhone" placeholder="Phone Number" required>
+      <input type="email" name="sellerEmail" placeholder="Email Address" required>
+      <textarea name="sellerAddress" rows="3" placeholder="Complete Address" required></textarea>
+      
+      <!-- Book Information -->
+      <h3>Book Information</h3>
+      <input type="text" name="bookTitle" placeholder="Book Title" required>
+      <input type="text" name="authorName" placeholder="Author Name" required>
+      <input type="text" name="publisher" placeholder="Publisher Name">
+      <input type="number" name="bookPrice" placeholder="Book Price (INR)" required>
+      <input type="text" name="isbn" placeholder="ISBN Number (Optional)">
+      <select name="bookCondition" required>
+        <option value="">Select Book Condition</option>
+        <option value="New">New</option>
+        <option value="Used - Like New">Used - Like New</option>
+        <option value="Used - Good">Used - Good</option>
+        <option value="Used - Acceptable">Used - Acceptable</option>
+      </select>
+      <textarea name="bookDescription" rows="4" placeholder="Brief Description of the Book" required></textarea>
 
-<div class="form-container">
-  <h2>Sell Your Book</h2>
-  <form onsubmit="submitForm(event)">
-    <input type="text" placeholder="Your Name" required>
-    <input type="text" placeholder="Book Title" required>
-    <input type="number" placeholder="Price" required>
-    <textarea placeholder="Book Description" rows="4"></textarea>
-    <button type="submit">Submit</button>
-  </form>
-</div>
+      <!-- Additional Information -->
+      <h3>Additional Information</h3>
+      <input type="text" name="quantity" placeholder="Number of Copies Available" required>
+      <input type="text" name="shippingDetails" placeholder="Shipping Time (e.g., 2-5 days)">
+      <textarea name="specialNotes" rows="3" placeholder="Any Special Notes or Instructions"></textarea>
 
-<script>
-  function submitForm(event) {
-    event.preventDefault();
-
-    const name = document.querySelector('input[placeholder="Your Name"]').value;
-    const bookTitle = document.querySelector('input[placeholder="Book Title"]').value;
-    const price = document.querySelector('input[placeholder="Price"]').value;
-    const description = document.querySelector('textarea').value;
-
-    const message = `New Seller Info:\nName: ${name}\nBook: ${bookTitle}\nPrice: ₹${price}\nDescription: ${description}`;
-    const whatsappURL = `https://wa.me/9005334613?text=${encodeURIComponent(message)}`;
-
-    window.open(whatsappURL, '_blank');
-  }
-</script>
-
+      <button type="submit">Submit Details</button>
+    </form>
+  </div>
 </body>
 </html>

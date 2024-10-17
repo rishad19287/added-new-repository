@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Book Store</title>
-    <link rel="stylesheet" href="stylish.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earn with Book Store</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Book Store</h1>
-        <img src="https://i.imgur.com/cLFygv5.jpeg" alt="Book Store Logo">
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Books</a>
-            <a href="#">Contact</a>
-            <a href="#" class="dropdown-toggle">☰</a>
-            <div class="dropdown-menu">
-                <a href="sell.html">Earn with Book Store</a>
-            </div>
-        </nav>
-    </header>
+  <h2>Earn with Book Store - Seller Registration</h2>
+  
+  <form action="https://formsubmit.co/9005334613" method="POST">
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="seller_name" required><br><br>
+    
+    <label for="phone">Contact Number (WhatsApp):</label><br>
+    <input type="tel" id="phone" name="contact_number" required><br><br>
+    
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address" rows="3" required></textarea><br><br>
+    
+    <label for="book">Book Title:</label><br>
+    <input type="text" id="book" name="book_title" required><br><br>
+    
+    <label for="author">Author:</label><br>
+    <input type="text" id="author" name="author_name"><br><br>
+    
+    <label for="price">Price (INR):</label><br>
+    <input type="number" id="price" name="price" required><br><br>
+    
+    <label for="category">Category/Genre:</label><br>
+    <input type="text" id="category" name="category"><br><br>
+    
+    <label for="condition">Condition (New/Used):</label><br>
+    <input type="text" id="condition" name="condition" required><br><br>
 
-    <section>
-        <div class="column">
-            <h2>All Categories</h2>
-            <p>Explore our entire collection!</p>
-        </div>
-        <div class="column">
-            <h2>Coming Soon</h2>
-            <p>Stay tuned for new arrivals!</p>
-        </div>
-        <div class="column">
-            <h2>Coming Soon</h2>
-            <p>Stay tuned for new arrivals!</p>
-        </div>
-        <div class="column">
-            <h2>Coming Soon</h2>
-            <p>Stay tuned for new arrivals!</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 My Book Store. All rights reserved.</p>
-    </footer>
+    <label for="description">Book Description:</label><br>
+    <textarea id="description" name="book_description" rows="4"></textarea><br><br>
+    
+    <label for="payment">UPI ID/Bank Details:</label><br>
+    <input type="text" id="payment" name="payment_info"><br><br>
+    
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>

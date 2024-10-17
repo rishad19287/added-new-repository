@@ -15,17 +15,12 @@
     header {
       background-color: #4CAF50;
       color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
+      text-align: center;
+      padding: 20px;
     }
     header img {
-      width: 100px;
-    }
-    nav {
-      display: flex;
-      align-items: center;
+      width: 150px;
+      margin: 10px 0;
     }
     nav a {
       margin: 0 15px;
@@ -33,14 +28,7 @@
       text-decoration: none;
       font-size: 18px;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .menu-icon {
-      font-size: 24px;
-      cursor: pointer;
-    }
-    .column-container {
+    section {
       display: flex;
       justify-content: space-around;
       padding: 50px;
@@ -72,39 +60,35 @@
   </style>
 </head>
 <body>
+  <header>
+    <h1>Welcome to My Book Store</h1>
+    <img src="https://i.imgur.com/FZBuJdL.jpeg" alt="Book Store Logo">
+    <nav>
+      <a href="#">Home</a> | <a href="#">Books</a> | <a href="#">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <img src="https://i.imgur.com/c2k7rOE.jpeg" alt="Book Store Logo">
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Books</a>
-    <a href="sell.html">Earn with Book Store</a>
-    <span class="menu-icon">&#9776;</span>
-  </nav>
-</header>
+  <section>
+    <div class="column">
+      <h2>All Categories</h2>
+      <p>Explore our entire collection!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+    <div class="column">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for new arrivals!</p>
+    </div>
+  </section>
 
-<div class="column-container">
-  <div class="column">
-    <h2>All Categories</h2>
-    <p>Explore our entire collection!</p>
-  </div>
-  <div class="column">
-    <h2>Coming Soon</h2>
-    <p>Stay tuned for new arrivals!</p>
-  </div>
-  <div class="column">
-    <h2>Coming Soon</h2>
-    <p>Stay tuned for new arrivals!</p>
-  </div>
-  <div class="column">
-    <h2>Coming Soon</h2>
-    <p>Stay tuned for new arrivals!</p>
-  </div>
-</div>
-
-<footer>
-  <p>&copy; 2024 My Book Store. All rights reserved.</p>
-</footer>
-
+  <footer>
+    <p>&copy; 2024 My Book Store. All rights reserved.</p>
+  </footer>
 </body>
 </html>
